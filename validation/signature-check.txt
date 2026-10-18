@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=RedMagic Tile Studio Debug, O=Personal Test, C=CN
+Signer #1 certificate SHA-256 digest: 271c2bd7c3b83fb227618b57c65782522e7d8c4678067e374990771078dde8b9
+Signer #1 certificate SHA-1 digest: e233c6f3ab0eb562ba1c3b83a307320bd87299ab
+Signer #1 certificate MD5 digest: 022b9a54d7c22a40c6382ed62d145b79
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 4306c2f8ccd7fb5567af1c44e2aa74b5b33b46a5d30c009a028ffb8c9aa51b31
+Signer #1 public key SHA-1 digest: 93bf0d21e057969d25ff8a6aae9ff13c9cbd605c
+Signer #1 public key MD5 digest: 2d764e33ce51f3587a43acddee39b016
