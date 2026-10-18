@@ -1,0 +1,13 @@
+{
+  "assertions": 22,
+  "status": "PASS",
+  "scenarios": [
+    "temporary failure then successful recovery",
+    "unrelated active fault is retained",
+    "duplicate failures are coalesced",
+    "recovered history stays bounded",
+    "retry budget stops",
+    "success resets retry budget"
+  ],
+  "android_runtime": "Not executed on hardware"
+}

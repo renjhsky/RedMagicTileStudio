@@ -1,0 +1,32 @@
+{
+  "firmware_apk_sha256": "df2120f3de62b8f4a3b027daa164cccb1ca0b9815331996b1e8adb96e1bf1190",
+  "checks": [
+    {
+      "class": "Lcom/zte/mifavor/qs/MfvTileLayout;",
+      "methods_verified": 6,
+      "fields_verified": 9
+    },
+    {
+      "class": "Lcom/zte/mifavor/qs/MfvPagedTileLayout;",
+      "methods_verified": 2,
+      "fields_verified": 2
+    },
+    {
+      "class": "Lcom/zte/qs/tileimpl/QSTileViewCircle;",
+      "methods_verified": 2,
+      "fields_verified": 0
+    },
+    {
+      "class": "Lcom/zte/controlcenter/view/ControlCenterTileLayout;",
+      "methods_verified": 1,
+      "fields_verified": 1
+    }
+  ],
+  "status": "PASS",
+  "limitations": "Static compatibility validation only; no NX789J runtime available.",
+  "alignment_checks": {
+    "ControlCenterTopPanel.getTileLeft(I)I": "PASS",
+    "ControlCenterPanelView.topPanel": "PASS",
+    "native_margin_resource": "control_center_quick_qs_wide_tile_margin_start"
+  }
+}

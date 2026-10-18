@@ -1,0 +1,18 @@
+{
+  "version_name": "1.0",
+  "version_code": 5,
+  "standalone_compilation": "PASS",
+  "apk_signature": "PASS - same test identity as previous installed APKs",
+  "zip_alignment": "PASS",
+  "repository_configuration_validation": "PASS",
+  "unbound_repository_blocks_release": "PASS",
+  "release_signing_unit_tests": 11,
+  "update_ui": "Implemented: GitHub releases, project homepage, copy-link fallback when browser unavailable",
+  "network_permission": "Not added; opens external browser",
+  "diagnostic_version_check": "Uses internal version code",
+  "github_repository": "renjhsky/RedMagicTileStudio",
+  "final_apk": "PASS - built with the configured GitHub repository; publication state is shown by GitHub Releases",
+  "device_ui_runtime": "Not available in this environment",
+  "public_source_contains_private_keys": false,
+  "fresh_public_source_build": "PASS - generated local test identity without bundled keystore"
+}

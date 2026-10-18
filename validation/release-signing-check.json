@@ -1,0 +1,8 @@
+{
+  "independent_external_fixture_key": "PASS",
+  "public_test_key_rejection": "PASS",
+  "missing_credentials_rejection": "PASS",
+  "release_private_key_delivered": false,
+  "gradle_release_task_executed": false,
+  "notes": "End-to-end validation used the standalone builder and an ephemeral fixture key; no production release or publication performed."
+}

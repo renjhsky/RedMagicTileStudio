@@ -1,0 +1,22 @@
+{
+  "apk": "RedMagicTileStudio-NX789J-v1.0.apk",
+  "package": "io.github.renjhtools.redmagictiles",
+  "version": "1.0",
+  "version_code": 5,
+  "size": 37488,
+  "sha256": "f6a7d4d5b27643718e5a1f9aa7d6ae2ba647cb8e28f2624e3f6189c685e68b83",
+  "diagnostic_retry_checks": 22,
+  "release_build_unit_tests": 8,
+  "module_entry": "PASS",
+  "same_test_certificate_as_previous": "PASS",
+  "upgrade_version_code": "PASS",
+  "apk_signature": "PASS",
+  "zip_alignment": "PASS",
+  "existing_grid_geometry_source_unchanged": "PASS",
+  "device_runtime": "Current update requires NX789J verification; previous layout reported working by the user",
+  "release_status": "Test-signed upgrade APK; private release signing is separately configured. Published versions and assets are listed on GitHub Releases.",
+  "github_update_repository": "renjhsky/RedMagicTileStudio",
+  "release_signing_unit_tests": 11,
+  "public_source_contains_private_keys": false,
+  "fresh_public_source_build": "PASS - generated local test identity without bundled keystore"
+}
