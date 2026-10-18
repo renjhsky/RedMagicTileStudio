@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <queries><package android:name="com.android.systemui" /></queries>
+ <application android:label="红魔磁贴布局" android:directBootAware="true" android:allowBackup="false" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:usesCleartextTraffic="false">
+  <meta-data android:name="libxposed" android:value="true" />
+  <meta-data android:name="xposedminversion" android:value="93" />
+  <meta-data android:name="xposeddescription" android:value="红魔NX789J快捷磁贴密度与样式" />
+  <activity android:name=".MainActivity" android:exported="true">
+   <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+   <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="de.robv.android.xposed.category.MODULE_SETTINGS"/></intent-filter>
+  </activity>
+  <provider android:name=".ConfigProvider" android:exported="true" android:authorities="io.github.renjhtools.redmagictiles.settings" />
+ </application>
+</manifest>
