@@ -1,0 +1,70 @@
+RedMagic Tile Studio - Publishing
+================================
+
+当前对外版本：1.0
+当前内部版本：versionCode=5
+兼容范围：NX789J / REDMAGIC OS 11 / Android 16 / libxposed API 102。
+当前提供的 APK 用于覆盖升级和设备验证，仍使用旧测试签名；私钥不随公开源码提供。
+
+源码与签名密钥
+--------------
+公开仓库和发布源码包不包含任何签名密钥库。首次独立调试构建会在工程内的
+.local-sign/debug.jks 自动生成本地测试密钥；该目录被 Git 忽略。Gradle 调试
+构建默认使用 Android 本地调试签名。自行编译的 APK 通常不能覆盖发布的测试版。
+发布者的既有本地测试密钥不会被覆盖，可继续用于同签名测试更新。
+也可通过 RMT_KEYSTORE、RMT_KEY_ALIAS、RMT_SIGN_PASS 指定已有本地测试签名。
+不要把任何 .jks/.keystore、密码或访问令牌加入公开提交和 Releases 附件。
+
+GitHub 更新入口
+---------------
+创建公开仓库 RedMagicTileStudio 后，把真实 owner/repository 写入工程：
+ python3 tools/configure-github.py YOUR_ACCOUNT/RedMagicTileStudio
+不要把访问令牌或密码写进 repository.properties，该文件只存公开仓库名称。
+Gradle 和独立构建均把同一仓库配置编入程序；“查看更新”打开 /releases 发布页。
+未来向同一仓库发布新版本即可保留软件中的更新入口。
+未配置真实仓库时，正式发布构建会拒绝继续；调试构建只显示尚未配置提示。
+
+正式签名
+--------
+先在本机生成并妥善保存你自己的正式签名密钥库。密钥库必须放在工程目录外，
+不得放入源码、共享压缩包或公开仓库。工程不会生成、索取或上传你的正式私钥。
+
+通过本机环境变量配置以下四项；不要把实际密码写进源码：
+ RMT_RELEASE_KEYSTORE        正式密钥库绝对路径
+ RMT_RELEASE_STORE_PASSWORD  密钥库密码
+ RMT_RELEASE_KEY_ALIAS       密钥别名
+ RMT_RELEASE_KEY_PASSWORD    私钥密码
+
+Gradle 正式构建：
+ gradle :app:assembleRelease
+Gradle 会检查外部密钥与公开测试密钥是否不同，缺失配置时阻止发布构建。
+
+独立正式构建（已用临时测试夹具完成完整验证）：
+ python3 tools/build-standalone.py --android-jar /path/to/android.jar \
+   --build-tools /path/to/build-tools --ecj /path/to/ecj.jar \
+   --release --output /path/to/RedMagicTileStudio-NX789J-v1.0-release.apk
+此路径会验证签名，发现使用公开测试密钥时不会把 APK 交付到目标路径。
+
+本次没有生成你的正式发布 APK，交付的预编译 APK 保留测试签名以兼容现有安装。
+正式版改用不同签名后，已有测试版安装不能直接覆盖；首次切换时需处理旧安装。
+后续正式更新持续使用相同的签名身份，并递增内部版本号。
+
+统一版本
+--------
+修改根目录 version.properties：
+ versionName=1.0
+ versionCode=5
+
+versionName 是用户看到的版本，versionCode 用于安装升级判断，后续更新应递增。
+Gradle、独立构建、设置程序与模块报告都从同一版本来源生成，不再多处手动修改。
+build-termux.sh 会按该版本命名输出文件。
+
+发布范围与实际验证
+------------------
+本工程不包含用户提供的原厂 SystemUI APK。当前兼容性检查针对该 APK 的特定
+类/方法/字段，不能据此宣称支持其他红魔型号或所有 OS 固件版本。
+此前布局已收到用户的 NX789J 生效反馈；本次新增的开机配置重试与历史诊断显示
+尚待设备复核。验证报告位于 validation。
+
+官方签名说明：
+ https://developer.android.com/studio/publish/app-signing
